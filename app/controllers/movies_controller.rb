@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
     respond_to do |format|
       if @movie.save
         flash[:notice] = 'Movie was successfully created.'
-        format.html { redirect_to(@movie) }
+        format.html { redirect_to(movies_path) }
         format.xml  { render :xml => @movie, :status => :created, :location => @movie }
       else
         format.html { render :action => "new" }
